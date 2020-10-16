@@ -32,14 +32,12 @@ import android.widget.TextView;
  *     <li>Message composition</li>
  *     <li>Sharing</li>
  *     <li>Shopping item details</li>
- * </ul>
- */
-public class NewDocumentActivity extends Activity {
+ *  NewDocumentActivity extends Activity {
 
-    private TextView mDocumentCounterTextView;
-    private int mDocumentCount;
+     TextView mDocumentCounterTextView;
+    int mDocumentCount;
 
-    @Override
+    
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_document);
@@ -50,7 +48,7 @@ public class NewDocumentActivity extends Activity {
         setDocumentCounterText(R.string.hello_new_document_counter);
     }
 
-    @Override
+    
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         /* If {@link Intent#FLAG_ACTIVITY_MULTIPLE_TASK} has not been used this Activity
@@ -59,12 +57,12 @@ public class NewDocumentActivity extends Activity {
         setDocumentCounterText(R.string.reusing_document_counter);
     }
 
-    public void onRemoveFromOverview(View view) {
+    onRemoveFromOverview(View view) {
         // It is good pratice to remove a document from the overview stack if not needed anymore.
         finishAndRemoveTask();
     }
 
-    public void setDocumentCounterText(int resId) {
+    osetDocumentCounterText(int resId) {
         mDocumentCounterTextView
                 .setText(String.format(getString(resId), String.valueOf(mDocumentCount)));
     }
